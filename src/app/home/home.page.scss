@@ -52,6 +52,15 @@ ion-content {
     ion-badge {
       margin-top: 8px;
       background: rgba(0,0,0,.08);
+      img {
+        width: 20px;
+        float: left;
+      }
+      span {
+        padding-left: 3px;
+        float: right;
+        line-height: 22px;
+      }
     }
 
     ion-card-title {
@@ -61,6 +70,10 @@ ion-content {
     .no {
       color: rgba(0,0,0,.66);
       font-weight: bold;
+    }
+
+    ion-card-subtitle ion-badge:last-child{
+      margin-left: 5px;
     }
   }
 }

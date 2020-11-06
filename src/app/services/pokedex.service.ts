@@ -9,17 +9,12 @@ import { Pokemon } from '../interfaces/pokemon.interface';
 })
 export class PokedexService {
 
-    constructor() {
+    public totalPokemons = pokedex.default.pokemons.length;
 
-    }
-
-    getPokemons(generationId: number = 0) {
-        let pokemons: Pokemon[];
-        if (generationId === 0) {
-            pokemons = pokedex.default.pokemons.slice(0, 20);
-        }
-
-        return pokemons;
+    constructor() {}
+    
+    getPokemons(from: number = 0, to: number = 20) {
+        return  pokedex.default.pokemons.slice(from, to);
     }
 
     returnTypes() {

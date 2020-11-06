@@ -75,6 +75,31 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  /** Normal**/
+  --ion-color-normal: #B57EDC;
+  --ion-color-normal-rgb: 181,126,220;
+  --ion-color-normal-contrast: #000000;
+  --ion-color-normal-contrast-rgb: 0,0,0;
+  --ion-color-normal-shade: #9f6fc2;
+  --ion-color-normal-tint: #bc8be0;
+
+  /**fighting**/
+  --ion-color-fighting: #b22222;
+  --ion-color-fighting-rgb: 178,34,34;
+  --ion-color-fighting-contrast: #ffffff;
+  --ion-color-fighting-contrast-rgb: 255,255,255;
+  --ion-color-fighting-shade: #9d1e1e;
+  --ion-color-fighting-tint: #ba3838;
+
+  /**grass**/
+  --ion-color-grass: #8bd674;
+  --ion-color-grass-rgb: 45, 211, 111;
+  --ion-color-grass-contrast: #ffffff;
+  --ion-color-grass-contrast-rgb: 255, 255, 255;
+  --ion-color-grass-shade: #28ba62;
+  --ion-color-grass-tint: #42d77d;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -227,3 +252,31 @@
     --ion-tab-bar-background: #1f1f1f;
   }
 }
+
+.ion-color-normal {
+  --ion-color-base: var(--ion-color-normal) !important;
+  --ion-color-base-rgb: var(--ion-color-normal-rgb) !important;
+  --ion-color-contrast: var(--ion-color-normal-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-normal-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-normal-shade) !important;
+  --ion-color-tint: var(--ion-color-normal-tint) !important;
+}
+
+.ion-color-fighting {
+  --ion-color-base: var(--ion-color-fighting) !important;
+  --ion-color-base-rgb: var(--ion-color-fighting-rgb) !important;
+  --ion-color-contrast: var(--ion-color-fighting-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-fighting-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-fighting-shade) !important;
+  --ion-color-tint: var(--ion-color-fighting-tint) !important;
+}
+
+.ion-color-grass {
+  --ion-color-base: var(--ion-color-grass) !important;
+  --ion-color-base-rgb: var(--ion-color-grass-rgb) !important;
+  --ion-color-contrast: var(--ion-color-grass-contrast) !important;
+  --ion-color-contrast-rgb: var(--ion-color-grass-contrast-rgb) !important;
+  --ion-color-shade: var(--ion-color-grass-shade) !important;
+  --ion-color-tint: var(--ion-color-grass-tint) !important;
+}
+
