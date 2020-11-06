@@ -5,7 +5,7 @@ import { DetailsPage } from './details.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: ':pokemonId',
     component: DetailsPage
   }
 ];

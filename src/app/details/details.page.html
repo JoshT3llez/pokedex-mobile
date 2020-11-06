@@ -1,9 +1,11 @@
-<ion-header>
+<ion-header class="ion-no-border" [translucent]="true">
   <ion-toolbar>
-    <ion-title>details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="pokemon" slot="end">{{pokemon.name | titlecase}}</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
 
 </ion-content>

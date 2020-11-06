@@ -2,6 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import { PokedexService } from '../services/pokedex.service';
 import {IonInfiniteScroll} from '@ionic/angular';
 import {Pokemon} from "../interfaces/pokemon.interface";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -15,8 +16,12 @@ export class HomePage {
     public from: number = 20;
     public to: number = 40;
 
-    constructor(private pokedexService: PokedexService) {
+    constructor(private pokedexService: PokedexService, private router: Router) {
         this.pokemons = this.pokedexService.getPokemons();
+    }
+
+    details(pokemon) {
+        this.router.navigateByUrl("/details/"+pokemon.id, {state: pokemon});
     }
 
     loadData(event) {

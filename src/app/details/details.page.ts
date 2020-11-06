@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Pokemon} from '../interfaces/pokemon.interface';
 
 @Component({
   selector: 'app-details',
@@ -6,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details.page.scss'],
 })
 export class DetailsPage implements OnInit {
+    public pokemon: Pokemon;
+    constructor() { }
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+    ngOnInit() {
+        this.pokemon = history.state;
+    }
 }
