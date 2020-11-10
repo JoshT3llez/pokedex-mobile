@@ -21,9 +21,22 @@
             <span>{{type | titlecase}}</span>
           </ion-badge>
         </div>
+
         <div class="description">
           <p>{{pokemon.description}}</p>
         </div>
+
+        <ion-segment (ionChange)="segmentChanged($event)" value="stats" ngClass="{{pokemon.types[0]}}">
+          <ion-segment-button value="stats">
+            <ion-label>Stats</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="evolutions">
+            <ion-label>Evolutions</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="moves">
+            <ion-label>Moves</ion-label>
+          </ion-segment-button>
+        </ion-segment>
       </div>
     </div>
   </div>

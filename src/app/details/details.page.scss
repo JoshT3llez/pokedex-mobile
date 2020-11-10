@@ -51,5 +51,238 @@
         line-height: 22px;
       }
     }
+
+    ion-segment.normal {
+      .segment-button-checked {
+        background-color: var(--ion-color-normal);
+        ion-label {
+          color: white !important;
+        }
+      }
+      ion-label {
+        color: var(--ion-color-normal) !important;
+      }
+    }
+
+    ion-segment.fighting {
+      .segment-button-checked {
+        background-color: var(--ion-color-fighting);
+        ion-label {
+          color: white !important;
+        }
+      }
+      ion-label {
+        color: var(--ion-color-fighting) !important;
+      }
+    }
+
+    ion-segment.flying {
+      .segment-button-checked {
+        background-color: var(--ion-color-flying);
+        ion-label {
+          color: white !important;
+        }
+      }
+      ion-label {
+        color: var(--ion-color-flying) !important;
+      }
+    }
+
+    ion-segment.poison {
+      .segment-button-checked {
+        background-color: var(--ion-color-poison);
+        ion-label {
+          color: white !important;
+        }
+      }
+      ion-label {
+        color: var(--ion-color-poison) !important;
+      }
+    }
+
+    ion-segment.ground {
+      .segment-button-checked {
+        background-color: var(--ion-color-ground);
+        ion-label {
+          color: white !important;
+        }
+      }
+      ion-label {
+        color: var(--ion-color-ground) !important;
+      }
+    }
+
+    ion-segment.rock {
+      .segment-button-checked {
+        background-color: var(--ion-color-rock);
+        ion-label {
+          color: white !important;
+        }
+      }
+      ion-label {
+        color: var(--ion-color-rock) !important;
+      }
+    }
+
+    ion-segment.bug {
+      .segment-button-checked {
+        background-color: var(--ion-color-bug);
+        ion-label {
+          color: white !important;
+        }
+      }
+      ion-label {
+        color: var(--ion-color-bug) !important;
+      }
+    }
+
+    ion-segment.ghost {
+      .segment-button-checked {
+        background-color: var(--ion-color-ghost);
+        ion-label {
+          color: white !important;
+        }
+      }
+      ion-label {
+        color: var(--ion-color-ghost) !important;
+      }
+    }
+
+    ion-segment.steel {
+      .segment-button-checked {
+        background-color: var(--ion-color-steel);
+        ion-label {
+          color: white !important;
+        }
+      }
+      ion-label {
+        color: var(--ion-color-steel) !important;
+      }
+    }
+
+    ion-segment.fire {
+      .segment-button-checked {
+        background-color: var(--ion-color-fire);
+        ion-label {
+          color: white !important;
+        }
+      }
+      ion-label {
+        color: var(--ion-color-fire) !important;
+      }
+    }
+
+    ion-segment.water {
+      .segment-button-checked {
+        background-color: var(--ion-color-water);
+        ion-label {
+          color: white !important;
+        }
+      }
+      ion-label {
+        color: var(--ion-color-water) !important;
+      }
+    }
+
+    ion-segment.grass {
+      .segment-button-checked {
+        background-color: var(--ion-color-grass);
+        ion-label {
+          color: white !important;
+        }
+        ion-label {
+          color: white !important;
+        }
+      }
+      ion-label {
+        color: var(--ion-color-grass);
+      }
+    }
+
+    ion-segment.electric {
+      .segment-button-checked {
+        background-color: var(--ion-color-electric);
+        ion-label {
+          color: white !important;
+        }
+      }
+      ion-label{
+        color: var(--ion-color-electric) !important;
+      }
+    }
+
+    ion-segment.psychic {
+      .segment-button-checked {
+        background-color: var(--ion-color-psychic);
+        ion-label {
+          color: white !important;
+        }
+      }
+      ion-label {
+        color: var(--ion-color-psychic) !important;
+      }
+    }
+
+    ion-segment.ice {
+      .segment-button-checked {
+        background-color: var(--ion-color-ice);
+        ion-label {
+          color: white !important;
+        }
+      }
+      ion-label {
+        color: var(--ion-color-ice) !important;
+      }
+    }
+
+    ion-segment.dragon {
+      .segment-button-checked {
+        background-color: var(--ion-color-dragon);
+        ion-label {
+          color: white !important;
+        }
+      }
+      ion-label {
+        color: var(--ion-color-dragon) !important;
+      }
+    }
+
+    ion-segment.dark {
+      .segment-button-checked {
+        background-color: var(--ion-color-dark);
+        ion-label {
+          color: white !important;
+        }
+      }
+      ion-label{
+        color: var(--ion-color-dark) !important;
+      }
+    }
+
+    ion-segment.fairy {
+      .segment-button-checked {
+        background-color: var(--ion-color-fairy);
+        ion-label {
+          color: white !important;
+        }
+      }
+      ion-label {
+        color: var(--ion-color-fairy) !important;
+      }
+    }
+
+    .segment-button-checked {
+      border-radius: 20px;
+    }
+
+    ion-segment-button {
+      --indicator-color: transparent !important;
+      --indicator-color-checked: transparent !important;
+    }
+
+    ion-segment-button ion-label {
+      text-transform: capitalize;
+      font-weight: 700;
+    }
   }
 }
