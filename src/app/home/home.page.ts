@@ -21,7 +21,7 @@ export class HomePage {
     }
 
     details(pokemon) {
-        this.router.navigateByUrl("/details/"+pokemon.id, {state: pokemon});
+        this.router.navigateByUrl("/details/"+pokemon.id);
     }
 
     loadData(event) {

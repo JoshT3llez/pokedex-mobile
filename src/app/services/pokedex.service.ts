@@ -14,7 +14,11 @@ export class PokedexService {
     constructor() {}
     
     getPokemons(from: number = 0, to: number = 20) {
-        return  pokedex.default.pokemons.slice(from, to);
+        return pokedex.default.pokemons.slice(from, to);
+    }
+
+    getPokemon(pokemonId: number) {
+        return pokedex.default.pokemons[pokemonId];
     }
 
     returnTypes() {
