@@ -2,21 +2,18 @@
   margin: 0 auto;
 
   .header {
-    height: 200px; // 20vh;
+    height: 150px; // 20vh;
 
     .avatar {
       width: 160px; //40vw
-      height: 160px;
+      height: 110px;
       position: relative;
       margin: 0 auto;
 
       img {
         display: block;
-        border-radius: 50%;
         position: absolute;
         bottom: calc(-1*(80px + 4px)); // -42px;
-        border: 8px solid #9Dc912;
-        background-color: #fff;
       }
     }
   }
@@ -27,21 +24,32 @@
   padding: 30px;
   height: calc(100vh - (200px + 56px));
   overflow: hidden;
+  border-radius: 45px 45px 0px 0px;
+  -moz-border-radius: 45px 45px 0px 0px;
+  -webkit-border-radius: 45px 45px 0px 0px;
+  border: 0px solid #000000;
 
   .user-meta {
-    padding-top: 40px;
+    padding-top: 10px;
 
-    .playername {
+    .pokemon-name {
       font-size: 24px;
       font-weight: 600;
       color: #303940;
     }
 
-    .country {
-      font-size: 90%;
-      color: #949ea6;
-      text-transform: uppercase;
-      margin: 0 auto;
+    ion-badge {
+      margin-top: 8px;
+      color: white;
+      img {
+        width: 20px;
+        float: left;
+      }
+      span {
+        padding-left: 3px;
+        float: right;
+        line-height: 22px;
+      }
     }
   }
 }
