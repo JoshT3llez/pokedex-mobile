@@ -1,43 +1,124 @@
 <ion-header class="ion-no-border" mode="ios">
-  <ion-toolbar class="ion-text-center" [color]="pokemon.types[0]">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home" mode="ios" text="Pokédex"></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar class="ion-text-center" [color]="pokemon.types[0]">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/home" mode="ios" text="Pokédex"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 <ion-content [color]="pokemon.types[0]" fullscreen="true" slot="fixed" >
-  <div class="card">
-    <div class="header">
-      <div class="avatar">
-        <img src="assets/images/{{pokemon.image}}" alt="">
-      </div>
-    </div>
-    <div class="card-body">
-      <div class="user-meta ion-text-center">
-        <h3 class="pokemon-name">{{pokemon.name | titlecase}}</h3>
-        <div class="types">
-          <ion-badge *ngFor="let type of pokemon.types; let i = index" [color]="type" [ngClass]="i > 0 ? 'ml-5' : ''">
-            <img src="assets/types/{{type | titlecase}}.png">
-            <span>{{type | titlecase}}</span>
-          </ion-badge>
+    <div class="card">
+        <div class="header">
+            <div class="avatar">
+                <img src="assets/images/{{pokemon.image}}" [alt]="pokemon.name">
+            </div>
         </div>
+        <div class="card-body">
+            <div class="user-meta ion-text-center">
+                <h3 class="pokemon-name">{{pokemon.name | titlecase}}</h3>
+                <div class="types">
+                    <ion-badge *ngFor="let type of pokemon.types; let i = index" [color]="type" [ngClass]="i > 0 ? 'ml-5' : ''">
+                        <img src="assets/types/{{type | titlecase}}.png">
+                        <span>{{type | titlecase}}</span>
+                    </ion-badge>
+                </div>
 
-        <div class="description">
-          <p>{{pokemon.description}}</p>
+                <div class="description">
+                    <p>{{pokemon.description}}</p>
+                </div>
+
+                <ion-segment (ionChange)="segmentChanged($event)" value="stats" ngClass="{{pokemon.types[0]}}">
+                    <ion-segment-button value="stats">
+                        <ion-label>Stats</ion-label>
+                    </ion-segment-button>
+
+                    <ion-segment-button value="evolutions">
+                        <ion-label>Evolutions</ion-label>
+                    </ion-segment-button>
+
+                    <ion-segment-button value="moves">
+                        <ion-label>Moves</ion-label>
+                    </ion-segment-button>
+                </ion-segment>
+
+                <div [ngSwitch]="segment">
+                    <div *ngSwitchCase="'stats'">
+                        <ion-grid>
+                            <ion-row>
+                                <ion-col size="2">
+                                    <ion-label>HP</ion-label>
+                                </ion-col>
+                                <ion-col size="2">
+                                    <ion-label>{{pokemon.baseStats.hp[0]}}</ion-label>
+                                </ion-col>
+                                <ion-col size="8">
+                                    <ion-progress-bar [color]="pokemon.types[0]" [value]="pokemon.baseStats.hp[0]/100"></ion-progress-bar>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col size="2">
+                                    <ion-label>ATK</ion-label>
+                                </ion-col>
+                                <ion-col size="2">
+                                    <ion-label>{{pokemon.baseStats.attack[0]}}</ion-label>
+                                </ion-col>
+                                <ion-col size="8">
+                                    <ion-progress-bar [color]="pokemon.types[0]" [value]="pokemon.baseStats.attack[0]/100"></ion-progress-bar>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col size="2">
+                                    <ion-label>DEF</ion-label>
+                                </ion-col>
+                                <ion-col size="2">
+                                    <ion-label>{{pokemon.baseStats.defence[0]}}</ion-label>
+                                </ion-col>
+                                <ion-col size="8">
+                                    <ion-progress-bar [color]="pokemon.types[0]" [value]="pokemon.baseStats.defence[0]/100"></ion-progress-bar>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col size="2">
+                                    <ion-label>SATK</ion-label>
+                                </ion-col>
+                                <ion-col size="2">
+                                    <ion-label>{{pokemon.baseStats.specialAttack[0]}}</ion-label>
+                                </ion-col>
+                                <ion-col size="8">
+                                    <ion-progress-bar [color]="pokemon.types[0]" [value]="pokemon.baseStats.specialAttack[0]/100"></ion-progress-bar>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col size="2">
+                                    <ion-label>SDEF</ion-label>
+                                </ion-col>
+                                <ion-col size="2">
+                                    <ion-label>{{pokemon.baseStats.specialDefence[0]}}</ion-label>
+                                </ion-col>
+                                <ion-col size="8">
+                                    <ion-progress-bar [color]="pokemon.types[0]" [value]="pokemon.baseStats.specialDefence[0]/100"></ion-progress-bar>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col size="2">
+                                    <ion-label>SPD</ion-label>
+                                </ion-col>
+                                <ion-col size="2">
+                                    <ion-label>{{pokemon.baseStats.speed[0]}}</ion-label>
+                                </ion-col>
+                                <ion-col size="8">
+                                    <ion-progress-bar [color]="pokemon.types[0]" [value]="pokemon.baseStats.speed[0]/100"></ion-progress-bar>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
+                    </div>
+                    <div *ngSwitchCase="'evolutions'">
+                        <ion-label>Evolutions</ion-label>
+                    </div>
+                    <div *ngSwitchCase="'moves'">
+                        <ion-label>Moves</ion-label>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <ion-segment (ionChange)="segmentChanged($event)" value="stats" ngClass="{{pokemon.types[0]}}">
-          <ion-segment-button value="stats">
-            <ion-label>Stats</ion-label>
-          </ion-segment-button>
-          <ion-segment-button value="evolutions">
-            <ion-label>Evolutions</ion-label>
-          </ion-segment-button>
-          <ion-segment-button value="moves">
-            <ion-label>Moves</ion-label>
-          </ion-segment-button>
-        </ion-segment>
-      </div>
     </div>
-  </div>
 </ion-content>

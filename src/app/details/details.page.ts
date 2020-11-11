@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class DetailsPage implements OnInit {
 
     public pokemon: Pokemon;
+    public segment: string = 'stats';
 
     constructor(private pokedexService: PokedexService, private activatedRoute: ActivatedRoute) {
         this.activatedRoute.params.subscribe(params => {
@@ -23,6 +24,6 @@ export class DetailsPage implements OnInit {
     }
 
     segmentChanged(ev: any) {
-        console.log('Segment changed', ev);
+        this.segment = ev.detail.value;
     }
 }

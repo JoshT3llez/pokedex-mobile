@@ -7,14 +7,18 @@ import { IonicModule } from '@ionic/angular';
 import { DetailsPageRoutingModule } from './details-routing.module';
 
 import { DetailsPage } from './details.page';
+import { ObjectToArrayPipe } from '../pipes/object-to-array.pipe';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    DetailsPageRoutingModule
-  ],
-  declarations: [DetailsPage]
+	imports: [
+		CommonModule,
+		FormsModule,
+		IonicModule,
+		DetailsPageRoutingModule,
+	],
+	exports: [
+		ObjectToArrayPipe
+	],
+  	declarations: [DetailsPage, ObjectToArrayPipe]
 })
 export class DetailsPageModule {}
