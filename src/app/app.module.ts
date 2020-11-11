@@ -8,10 +8,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ObjectToArrayPipe } from './pipes/object-to-array.pipe';
 
 @NgModule({
-    declarations: [AppComponent, ObjectToArrayPipe],
+    declarations: [AppComponent],
     entryComponents: [],
     imports: [BrowserModule, IonicModule.forRoot({mode: 'md'}), AppRoutingModule],
     providers: [
@@ -19,9 +18,6 @@ import { ObjectToArrayPipe } from './pipes/object-to-array.pipe';
         SplashScreen,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
     ],
-	exports: [
-		ObjectToArrayPipe
-	],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

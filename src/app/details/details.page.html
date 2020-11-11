@@ -40,12 +40,12 @@
                     </ion-segment-button>
                 </ion-segment>
 
-                <div [ngSwitch]="segment">
-                    <div *ngSwitchCase="'stats'">
+                <div [ngSwitch]="segment" class="ion-margin-top">
+                    <div *ngSwitchCase="'stats'" class="stats">
                         <ion-grid>
                             <ion-row>
                                 <ion-col size="2">
-                                    <ion-label>HP</ion-label>
+                                    <ion-label [color]="pokemon.types[0]">HP</ion-label>
                                 </ion-col>
                                 <ion-col size="2">
                                     <ion-label>{{pokemon.baseStats.hp[0]}}</ion-label>
@@ -56,7 +56,7 @@
                             </ion-row>
                             <ion-row>
                                 <ion-col size="2">
-                                    <ion-label>ATK</ion-label>
+                                    <ion-label [color]="pokemon.types[0]">ATK</ion-label>
                                 </ion-col>
                                 <ion-col size="2">
                                     <ion-label>{{pokemon.baseStats.attack[0]}}</ion-label>
@@ -67,7 +67,7 @@
                             </ion-row>
                             <ion-row>
                                 <ion-col size="2">
-                                    <ion-label>DEF</ion-label>
+                                    <ion-label [color]="pokemon.types[0]">DEF</ion-label>
                                 </ion-col>
                                 <ion-col size="2">
                                     <ion-label>{{pokemon.baseStats.defence[0]}}</ion-label>
@@ -78,7 +78,7 @@
                             </ion-row>
                             <ion-row>
                                 <ion-col size="2">
-                                    <ion-label>SATK</ion-label>
+                                    <ion-label [color]="pokemon.types[0]">SATK</ion-label>
                                 </ion-col>
                                 <ion-col size="2">
                                     <ion-label>{{pokemon.baseStats.specialAttack[0]}}</ion-label>
@@ -89,7 +89,7 @@
                             </ion-row>
                             <ion-row>
                                 <ion-col size="2">
-                                    <ion-label>SDEF</ion-label>
+                                    <ion-label [color]="pokemon.types[0]">SDEF</ion-label>
                                 </ion-col>
                                 <ion-col size="2">
                                     <ion-label>{{pokemon.baseStats.specialDefence[0]}}</ion-label>
@@ -100,7 +100,7 @@
                             </ion-row>
                             <ion-row>
                                 <ion-col size="2">
-                                    <ion-label>SPD</ion-label>
+                                    <ion-label [color]="pokemon.types[0]">SPD</ion-label>
                                 </ion-col>
                                 <ion-col size="2">
                                     <ion-label>{{pokemon.baseStats.speed[0]}}</ion-label>

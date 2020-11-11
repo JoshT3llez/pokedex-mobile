@@ -288,5 +288,18 @@ ion-back-button {
       text-transform: capitalize;
       font-weight: 700;
     }
+
+    .stats {
+      ion-label {
+        font-size: 15px !important;
+      }
+      ion-progress-bar {
+        height: 7px !important;
+        border-radius: 5px !important;
+        .progress {
+          border-radius: 10px !important;
+        }
+      }
+    }
   }
 }

@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { DetailsPageRoutingModule } from './details-routing.module';
 
 import { DetailsPage } from './details.page';
-import { ObjectToArrayPipe } from '../pipes/object-to-array.pipe';
 
 @NgModule({
 	imports: [
@@ -16,9 +15,6 @@ import { ObjectToArrayPipe } from '../pipes/object-to-array.pipe';
 		IonicModule,
 		DetailsPageRoutingModule,
 	],
-	exports: [
-		ObjectToArrayPipe
-	],
-  	declarations: [DetailsPage, ObjectToArrayPipe]
+  	declarations: [DetailsPage]
 })
 export class DetailsPageModule {}
