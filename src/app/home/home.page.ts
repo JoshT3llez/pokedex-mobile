@@ -13,6 +13,7 @@ export class HomePage {
     @ViewChild(IonInfiniteScroll) inifiniteScroll: IonInfiniteScroll;
 
     public pokemons: Pokemon[] = [];
+    public filterText: string = '';
     public from: number = 20;
     public to: number = 40;
     public showIonSearchBar: boolean = false;
@@ -27,6 +28,10 @@ export class HomePage {
 
     details(pokemon) {
         this.router.navigateByUrl("/details/"+pokemon.id);
+    }
+
+    onSearchChange(event) {
+        console.log(event.details.value);
     }
 
     loadData(event) {
