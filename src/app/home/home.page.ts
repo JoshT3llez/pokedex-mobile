@@ -15,9 +15,14 @@ export class HomePage {
     public pokemons: Pokemon[] = [];
     public from: number = 20;
     public to: number = 40;
+    public showIonSearchBar: boolean = false;
 
     constructor(private pokedexService: PokedexService, private router: Router) {
         this.pokemons = this.pokedexService.getPokemons();
+    }
+
+    showSearchBar() {
+        this.showIonSearchBar = !this.showIonSearchBar;
     }
 
     details(pokemon) {

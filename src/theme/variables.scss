@@ -551,3 +551,17 @@
   --ion-color-tint: var(--ion-color-fairy-tint);
   //background: linear-gradient(25deg, var(--ion-color-fairy), #ffffff);
 }
+
+::-webkit-scrollbar, *::-webkit-scrollbar {
+  display: none;
+  overflow: hidden;
+}
+
+ion-content {
+  overflow: hidden;
+  --overflow: hidden;
+}
+
+.scroll-content {
+  overflow: hidden;
+}

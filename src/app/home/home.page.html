@@ -3,19 +3,25 @@
     <ion-toolbar>
         <ion-title>Pokédex</ion-title>
         <ion-buttons slot="end">
+            <ion-button (click)="showSearchBar()">
+                <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+            </ion-button>
           <ion-button>
             <ion-icon name="options-outline"></ion-icon>
           </ion-button>
         </ion-buttons>
     </ion-toolbar>
 
-    <div class="titles">
+    <!-- <div class="titles">
         <ion-searchbar class="ion-no-padding ion-padding-top" placeholder="Buscar..."></ion-searchbar>
+    </div> -->
+    <div class="searchbar">
+        <ion-searchbar class="animate__animated animate__fadeInDown animate__faster" *ngIf="showIonSearchBar" placeholder="Buscar Película" animated inputmode="text" mode="ios" [debounce]="250" (ionChange)="onSearchChange($event)"></ion-searchbar>
     </div>
 </ion-header>
 
 <ion-content fullscreen="true">
-    <div class="ion-padding">
+    <div class="ion-padding no-padding-top">
         <ion-card *ngFor="let pokemon of pokemons" color="{{pokemon.types[0]}}" (click)="details(pokemon)">
             <div class="mask">
                 <img src="assets/pokeball.png">
