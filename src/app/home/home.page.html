@@ -1,20 +1,17 @@
 <ion-header class="ion-no-border">
     <img src="assets/pokeball.png">
     <ion-toolbar>
-        <ion-title *ngIf="!showIonSearchBar">Pokédex</ion-title>
-        <div class="searchbar">
-            <ion-searchbar class="animate__animated animate__fadeInLeft animate__faster" *ngIf="showIonSearchBar" placeholder="Buscar Pokémon" animated inputmode="text" mode="ios" [debounce]="250" (ionChange)="onSearchChange($event)"></ion-searchbar>
-        </div>
+        <ion-title>Pokédex</ion-title>
         <ion-buttons slot="end">
-            <ion-button (click)="showSearchBar()">
-                <ion-icon *ngIf="showIonSearchBar" slot="icon-only" name="close-circle-outline"></ion-icon>
-                <ion-icon *ngIf="!showIonSearchBar" slot="icon-only" name="search-outline"></ion-icon>
-            </ion-button>
           <ion-button>
             <ion-icon name="options-outline"></ion-icon>
           </ion-button>
         </ion-buttons>
     </ion-toolbar>
+
+    <div class="searchbar">
+        <ion-searchbar placeholder="Buscar Pokémon" animated inputmode="text" mode="ios" [debounce]="250" (ionChange)="onSearchChange($event)"></ion-searchbar>
+    </div>
 </ion-header>
 
 <ion-content fullscreen="true">

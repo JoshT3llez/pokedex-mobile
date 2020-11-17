@@ -17,6 +17,10 @@ export class PokedexService {
         return pokedex.default.pokemons.slice(from, to);
     }
 
+    getPokemonsByName(name) {
+        return pokedex.default.pokemons.filter(pokemon => pokemon.name.includes(name));
+    }
+
     getPokemon(pokemonId: number) {
         return pokedex.default.pokemons[pokemonId];
     }

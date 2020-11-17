@@ -1,6 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import { PokedexService } from '../services/pokedex.service';
-import {IonInfiniteScroll} from '@ionic/angular';
+import {IonInfiniteScroll, IonSearchbar, PopoverController} from '@ionic/angular';
 import {Pokemon} from "../interfaces/pokemon.interface";
 import {Router} from "@angular/router";
 
@@ -11,19 +11,15 @@ import {Router} from "@angular/router";
 })
 export class HomePage {
     @ViewChild(IonInfiniteScroll) inifiniteScroll: IonInfiniteScroll;
+    @ViewChild(IonSearchbar) searchBar: IonSearchbar;
 
     public pokemons: Pokemon[] = [];
     public filterText: string = '';
     public from: number = 20;
     public to: number = 40;
-    public showIonSearchBar: boolean = false;
 
-    constructor(private pokedexService: PokedexService, private router: Router) {
+    constructor(private pokedexService: PokedexService, private router: Router, public popoverController: PopoverController) {
         this.pokemons = this.pokedexService.getPokemons();
-    }
-
-    showSearchBar() {
-        this.showIonSearchBar = !this.showIonSearchBar;
     }
 
     details(pokemon) {
@@ -31,24 +27,44 @@ export class HomePage {
     }
 
     onSearchChange(event) {
-        console.log(event.details.value);
+        if(event.detail.value === '') {
+            this.pokemons = this.pokedexService.getPokemons();
+        } else {
+            this.pokemons = this.pokedexService.getPokemonsByName(event.detail.value)
+        }
     }
 
     loadData(event) {
-        setTimeout(() => {
-            if(this.pokemons.length >= this.pokedexService.totalPokemons) {
-                this.inifiniteScroll.complete();
-                this.inifiniteScroll.disabled = true;
-                return;
-            }
+        if (this.searchBar.value === '') {
+            setTimeout(() => {
+                if(this.pokemons.length >= this.pokedexService.totalPokemons) {
+                    this.inifiniteScroll.complete();
+                    this.inifiniteScroll.disabled = true;
+                    return;
+                }
 
-            const newPokemons = this.pokedexService.getPokemons(this.from, this.to);
+                const newPokemons = this.pokedexService.getPokemons(this.from, this.to);
 
-            this.pokemons.push(...newPokemons);
-            this.from = this.to;
-            this.to   = this.to + 20;
-        }, 1000);
+                this.pokemons.push(...newPokemons);
+                this.from = this.to;
+                this.to   = this.to + 20;
+            }, 1000);
 
-        this.inifiniteScroll.complete();
+            this.inifiniteScroll.complete();
+        } else {
+            this.inifiniteScroll.complete();
+            this.inifiniteScroll.disabled = true;
+            return;
+        }
     }
+
+    // async presentPopover(ev: any) {
+    //     const popover = await this.popoverController.create({
+    //         component: PopoverComponent,
+    //         cssClass: 'my-custom-class',
+    //         event: ev,
+    //         translucent: true
+    //     });
+    //     return await popover.present();
+    // }
 }
