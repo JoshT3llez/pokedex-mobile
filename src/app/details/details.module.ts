@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { DetailsPageRoutingModule } from './details-routing.module';
 
 import { DetailsPage } from './details.page';
+import {KeysPipe} from '../pipes/keys.pipe';
 
 @NgModule({
 	imports: [
@@ -15,6 +16,6 @@ import { DetailsPage } from './details.page';
 		IonicModule,
 		DetailsPageRoutingModule,
 	],
-  	declarations: [DetailsPage]
+	declarations: [DetailsPage, KeysPipe]
 })
 export class DetailsPageModule {}

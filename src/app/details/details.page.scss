@@ -26,7 +26,7 @@ ion-back-button {
 .card-body {
   background-color: #ffffff;
   padding: 30px;
-  height: calc(100vh - 194px);
+  //height: calc(100vh - 194px);
   overflow: hidden;
   border-radius: 45px 45px 0px 0px;
   -moz-border-radius: 45px 45px 0px 0px;
@@ -298,6 +298,12 @@ ion-back-button {
         border-radius: 5px !important;
         .progress {
           border-radius: 10px !important;
+        }
+      }
+
+      .weaknesses {
+        img {
+          width: 20px;
         }
       }
     }
