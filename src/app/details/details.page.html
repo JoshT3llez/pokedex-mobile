@@ -1,10 +1,11 @@
-<ion-header class="ion-no-border" mode="ios">
-    <ion-toolbar class="ion-text-center" [color]="pokemon.types[0]">
+<ion-header class="ion-no-border">
+    <ion-toolbar [color]="pokemon.types[0]">
         <ion-buttons slot="start">
             <ion-back-button defaultHref="/home" mode="ios" text="Pokédex"></ion-back-button>
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
+
 <ion-content [color]="pokemon.types[0]" fullscreen="true" slot="fixed" >
     <div class="card">
         <div class="header">
