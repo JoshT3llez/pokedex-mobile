@@ -24,6 +24,7 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@import "~animate.css/animate.css";
 
 ::-webkit-scrollbar, *::-webkit-scrollbar {
   display: none;
@@ -43,4 +44,20 @@ ion-content {
 
 .ml-5 {
   margin-left: 5px;
+}
+
+::-webkit-scrollbar, *::-webkit-scrollbar {
+  display: none;
+  overflow: hidden;
+}
+
+ion-content {
+  overflow: auto;
+  --overflow: auto;
+  overflow-y: auto;
+}
+
+.scroll-content {
+  overflow: hidden;
+  padding-bottom: 5rem;
 }
