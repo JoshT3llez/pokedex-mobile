@@ -90,7 +90,9 @@
         "dark": null,
         "steel": null,
         "fairy": 0.5
-      }
+      },
+      "preevolution": [],
+      "evolution": [2,3]
     },
     {
       "id": 2,
@@ -182,7 +184,9 @@
         "dark": null,
         "steel": null,
         "fairy": 0.5
-      }
+      },
+      "preevolution": [1],
+      "evolution": [3]
     },
     {
       "id": 3,
@@ -274,7 +278,9 @@
         "dark": null,
         "steel": null,
         "fairy": 0.5
-      }
+      },
+      "preevolution": [1,2],
+      "evolution": []
     },
     {
       "id": 4,
@@ -365,7 +371,9 @@
         "dark": null,
         "steel": 0.5,
         "fairy": 0.5
-      }
+      },
+      "preevolution": [],
+      "evolution": [5,6]
     },
     {
       "id": 5,
@@ -456,7 +464,9 @@
         "dark": null,
         "steel": 0.5,
         "fairy": 0.5
-      }
+      },
+      "preevolution": [4],
+      "evolution": [6]
     },
     {
       "id": 6,
@@ -546,7 +556,9 @@
         "dark": null,
         "steel": 0.5,
         "fairy": 0.5
-      }
+      },
+      "preevolution": [4,5],
+      "evolution": []
     },
     {
       "id": 7,
@@ -637,7 +649,9 @@
         "dark": null,
         "steel": 0.5,
         "fairy": null
-      }
+      },
+      "preevolution": [],
+      "evolution": [8, 9]
     },
     {
       "id": 8,
@@ -728,7 +742,9 @@
         "dark": null,
         "steel": 0.5,
         "fairy": null
-      }
+      },
+      "preevolution": [7],
+      "evolution": [9]
     },
     {
       "id": 9,
@@ -819,7 +835,9 @@
         "dark": null,
         "steel": 0.5,
         "fairy": null
-      }
+      },
+      "preevolution": [7,8],
+      "evolution": []
     },
     {
       "id": 10,
@@ -909,7 +927,9 @@
         "dark": null,
         "steel": null,
         "fairy": null
-      }
+      },
+      "preevolution": [],
+      "evolution": [11,12]
     },
     {
       "id": 11,
@@ -999,7 +1019,9 @@
         "dark": null,
         "steel": null,
         "fairy": null
-      }
+      },
+      "preevolution": [10],
+      "evolution": [12]
     },
     {
       "id": 12,
@@ -1088,7 +1110,9 @@
         "dark": null,
         "steel": null,
         "fairy": null
-      }
+      },
+      "preevolution": [10,11],
+      "evolution": []
     },
     {
       "id": 13,
@@ -1179,7 +1203,9 @@
         "dark": null,
         "steel": null,
         "fairy": 0.5
-      }
+      },
+      "preevolution": [],
+      "evolution": [14]
     },
     {
       "id": 14,
@@ -1270,7 +1296,9 @@
         "dark": null,
         "steel": null,
         "fairy": 0.5
-      }
+      },
+      "preevolution": [13],
+      "evolution": [15]
     },
     {
       "id": 15,
@@ -1361,7 +1389,9 @@
         "dark": null,
         "steel": null,
         "fairy": 0.5
-      }
+      },
+      "preevolution": [13,14],
+      "evolution": []
     },
     {
       "id": 16,
@@ -1450,7 +1480,9 @@
         "dark": null,
         "steel": null,
         "fairy": null
-      }
+      },
+      "preevolution": [],
+      "evolution": [17,18]
     },
     {
       "id": 17,
@@ -1539,7 +1571,9 @@
         "dark": null,
         "steel": null,
         "fairy": null
-      }
+      },
+      "preevolution": [17],
+      "evolution": [18]
     },
     {
       "id": 18,
@@ -1628,7 +1662,9 @@
         "dark": null,
         "steel": null,
         "fairy": null
-      }
+      },
+      "preevolution": [17,18],
+      "evolution": []
     },
     {
       "id": 19,
@@ -1717,7 +1753,9 @@
         "dark": null,
         "steel": null,
         "fairy": null
-      }
+      },
+      "preevolution": [],
+      "evolution": [20]
     },
     {
       "id": 20,
@@ -1806,7 +1844,9 @@
         "dark": null,
         "steel": null,
         "fairy": null
-      }
+      },
+      "preevolution": [19],
+      "evolution": []
     },
     {
       "id": 21,
@@ -1895,7 +1935,9 @@
         "dark": null,
         "steel": null,
         "fairy": null
-      }
+      },
+      "preevolution": [],
+      "evolution": [22]
     },
     {
       "id": 22,
@@ -1984,7 +2026,9 @@
         "dark": null,
         "steel": null,
         "fairy": null
-      }
+      },
+      "preevolution": [],
+      "evolution": [21]
     },
     {
       "id": 23,
@@ -2075,7 +2119,9 @@
         "dark": null,
         "steel": null,
         "fairy": 0.5
-      }
+      },
+      "preevolution": [],
+      "evolution": [24]
     },
     {
       "id": 24,
@@ -2166,7 +2212,9 @@
         "dark": null,
         "steel": null,
         "fairy": 0.5
-      }
+      },
+      "preevolution": [],
+      "evolution": [23]
     },
     {
       "id": 25,
@@ -2257,7 +2305,9 @@
         "dark": null,
         "steel": null,
         "fairy": null
-      }
+      },
+      "preevolution": [172],
+      "evolution": [26]
     },
     {
       "id": 26,
@@ -2348,7 +2398,9 @@
         "dark": null,
         "steel": null,
         "fairy": null
-      }
+      },
+      "preevolution": [172,25],
+      "evolution": []
     },
     {
       "id": 27,
@@ -2437,7 +2489,9 @@
         "dark": null,
         "steel": null,
         "fairy": null
-      }
+      },
+      "preevolution": [],
+      "evolution": [28]
     },
     {
       "id": 28,
@@ -2526,7 +2580,9 @@
         "dark": null,
         "steel": null,
         "fairy": null
-      }
+      },
+      "preevolution": [],
+      "evolution": [27]
     },
     {
       "id": 29,
@@ -15494,7 +15550,9 @@
         "dark": null,
         "steel": null,
         "fairy": null
-      }
+      },
+      "preevolution": [],
+      "evolution": [25,26]
     },
     {
       "id": 173,
