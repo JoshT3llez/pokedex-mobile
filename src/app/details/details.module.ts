@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 import { IonicModule } from '@ionic/angular';
-
 import { DetailsPageRoutingModule } from './details-routing.module';
 
 import { DetailsPage } from './details.page';
-import {KeysPipe} from '../pipes/keys.pipe';
+import { KeysPipe } from '../pipes/keys.pipe';
+import { TypeDefencesPipe } from '../pipes/type-defences.pipe';
 
 @NgModule({
 	imports: [
@@ -16,6 +15,6 @@ import {KeysPipe} from '../pipes/keys.pipe';
 		IonicModule,
 		DetailsPageRoutingModule,
 	],
-	declarations: [DetailsPage, KeysPipe]
+	declarations: [DetailsPage, KeysPipe, TypeDefencesPipe]
 })
 export class DetailsPageModule {}
