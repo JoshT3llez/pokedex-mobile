@@ -1,22 +1,23 @@
 import {Component, ViewChild} from '@angular/core';
 import { PokedexService } from '../services/pokedex.service';
-import {IonInfiniteScroll, IonSearchbar, PopoverController} from '@ionic/angular';
-import {Pokemon} from "../interfaces/pokemon.interface";
-import {Router} from "@angular/router";
+import { IonInfiniteScroll, IonSearchbar, PopoverController} from '@ionic/angular';
+import { Router} from "@angular/router";
+import { Pokemon } from "../interfaces/pokemon.interface";
+import { GenerationFilterComponent } from '../components/generation-filter/generation-filter.component';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector      : 'app-home',
+  templateUrl   : 'home.page.html',
+  styleUrls     : ['home.page.scss'],
 })
 export class HomePage {
     @ViewChild(IonInfiniteScroll) inifiniteScroll: IonInfiniteScroll;
     @ViewChild(IonSearchbar) searchBar: IonSearchbar;
 
-    public pokemons: Pokemon[] = [];
-    public filterText: string = '';
-    public from: number = 20;
-    public to: number = 40;
+    public pokemons     : Pokemon[] = [];
+    public filterText   : string    = '';
+    public from         : number    = 20;
+    public to           : number    = 40;
 
     constructor(private pokedexService: PokedexService, private router: Router, public popoverController: PopoverController) {
         this.pokemons = this.pokedexService.getPokemons();
@@ -58,13 +59,20 @@ export class HomePage {
         }
     }
 
-    // async presentPopover(ev: any) {
-    //     const popover = await this.popoverController.create({
-    //         component: PopoverComponent,
-    //         cssClass: 'my-custom-class',
-    //         event: ev,
-    //         translucent: true
-    //     });
-    //     return await popover.present();
-    // }
+    async presentPopover(ev: any) {
+        const popover = await this.popoverController.create({
+            component       : GenerationFilterComponent,
+            event           : ev,
+            translucent     : true,
+            animated        : true,
+            mode            : 'ios',
+            backdropDismiss : true
+        });
+
+        await popover.present();
+
+        const {data} = await popover.onWillDismiss();
+
+        console.log(data);
+    }
 }

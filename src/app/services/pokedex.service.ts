@@ -25,6 +25,10 @@ export class PokedexService {
         return pokedex.default.pokemons[pokemonId];
     }
 
+    getPokemonsByGeneration(generationId: number) {
+
+    }
+
     returnTypes() {
         return types.default;
     }

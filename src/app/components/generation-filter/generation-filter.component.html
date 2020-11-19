@@ -1,0 +1,5 @@
+<ion-list>
+    <ion-item *ngFor="let generation of generations;" (click)="onClick(generation.id)">
+        <ion-label>{{generation.name}}</ion-label>
+    </ion-item>
+</ion-list>
