@@ -11,6 +11,8 @@ export interface Pokemon {
     breedings       : Breedings;
     baseStats       : BaseStats;
     typeDefences    : { [key: string]: number | null };
+    preevolution    : number[] | Pokemon[];
+    evolution       : number[] | Pokemon[];
 }
 
 export interface BaseStats {

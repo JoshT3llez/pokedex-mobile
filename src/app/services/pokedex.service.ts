@@ -5,7 +5,7 @@ import * as items from '../../assets/data/items.json';
 import { Pokemon } from '../interfaces/pokemon.interface';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class PokedexService {
 
@@ -17,25 +17,37 @@ export class PokedexService {
         return pokedex.default.pokemons.slice(from, to);
     }
 
-    getPokemonsByName(name) {
-        return pokedex.default.pokemons.filter(pokemon => pokemon.name.includes(name));
+    getPokemonsByName(name: string, generationId: number = 0) {
+        const keys  = this.getGenerationKeys(generationId);
+        const from  = keys[0],
+            to      = keys[1];
+        return pokedex.default.pokemons.slice(from, to).filter(pokemon => pokemon.name.includes(name));
     }
 
     getPokemon(pokemonId: number) {
-        return pokedex.default.pokemons[pokemonId];
-    }
+        let pokemon = pokedex.default.pokemons[pokemonId];
+            pokemon.preevolution.forEach((preId, index) => {
+                pokemon.preevolution[index] = pokedex.default.pokemons[preId-1];
+            })
 
-    getPokemonsByGeneration(generationId: number) {
-
+            pokemon.evolution.forEach((eId, index) => {
+                pokemon.evolution[index] = pokedex.default.pokemons[eId-1];
+            })
+        return pokemon;
     }
 
     returnTypes() {
         return types.default;
     }
 
-    private getGenerationKeys(generationId) {
+    getGenerationKeys(generationId) {
         const keys: number[] = [];
         switch (generationId) {
+            case 0:
+                keys[0] = 0;
+                keys[1] = 893;
+                break;
+
             case 1:
                 keys[0] = 0;
                 keys[1] = 151;

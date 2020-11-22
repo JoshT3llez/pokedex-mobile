@@ -1,16 +1,17 @@
-import {Component, ViewChild} from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { PokedexService } from '../services/pokedex.service';
-import { IonInfiniteScroll, IonSearchbar, PopoverController} from '@ionic/angular';
+import { IonInfiniteScroll, IonSearchbar, PopoverController } from '@ionic/angular';
 import { Router} from "@angular/router";
 import { Pokemon } from "../interfaces/pokemon.interface";
 import { GenerationFilterComponent } from '../components/generation-filter/generation-filter.component';
 
 @Component({
-  selector      : 'app-home',
-  templateUrl   : 'home.page.html',
-  styleUrls     : ['home.page.scss'],
+    selector      : 'app-home',
+    templateUrl   : 'home.page.html',
+    styleUrls     : ['home.page.scss'],
 })
 export class HomePage {
+
     @ViewChild(IonInfiniteScroll) inifiniteScroll: IonInfiniteScroll;
     @ViewChild(IonSearchbar) searchBar: IonSearchbar;
 
@@ -18,6 +19,7 @@ export class HomePage {
     public filterText   : string    = '';
     public from         : number    = 20;
     public to           : number    = 40;
+    public generationId : number    = 0;
 
     constructor(private pokedexService: PokedexService, private router: Router, public popoverController: PopoverController) {
         this.pokemons = this.pokedexService.getPokemons();
@@ -31,7 +33,7 @@ export class HomePage {
         if(event.detail.value === '') {
             this.pokemons = this.pokedexService.getPokemons();
         } else {
-            this.pokemons = this.pokedexService.getPokemonsByName(event.detail.value)
+            this.pokemons = this.pokedexService.getPokemonsByName(event.detail.value, this.generationId)
         }
     }
 
@@ -71,8 +73,13 @@ export class HomePage {
 
         await popover.present();
 
-        const {data} = await popover.onWillDismiss();
-
-        console.log(data);
+        const {data}        = await popover.onWillDismiss();
+        const keys          = this.pokedexService.getGenerationKeys(data.generationId);
+        this.from           = keys[0];
+        this.to             = keys[0] + 20;
+        this.generationId   = data.generationId;
+        this.pokemons       = this.pokedexService.getPokemons(this.from, this.to);
+        this.from           = this.to;
+        this.to             = this.to + 20;
     }
 }

@@ -1,4 +1,4 @@
-<ion-header class="ion-no-border">
+<ion-header class="ion-no-border" mode="ios">
     <ion-toolbar [color]="pokemon.types[0]">
         <ion-buttons slot="start">
             <ion-back-button defaultHref="/home" mode="ios" text="Pokédex"></ion-back-button>
@@ -130,9 +130,6 @@
                     </div>
                     <div *ngSwitchCase="'evolutions'">
                         <ion-label>Evolutions</ion-label>
-                    </div>
-                    <div *ngSwitchCase="'moves'">
-                        <ion-label>Moves</ion-label>
                     </div>
                 </div>
             </div>
