@@ -15,7 +15,9 @@
         </div>
         <div class="card-body">
             <div class="user-meta ion-text-center">
-                <h3 class="pokemon-name">{{pokemon.name | titlecase}}</h3>
+                <ion-text [color]="pokemon.types[0]">
+                    <h3 class="pokemon-name">{{pokemon.name | titlecase}}</h3>
+                </ion-text>
                 <div class="types">
                     <ion-badge *ngFor="let type of pokemon.types; let i = index" [color]="type" [ngClass]="i > 0 ? 'ml-5' : ''">
                         <img src="assets/types/{{type | titlecase}}.png">

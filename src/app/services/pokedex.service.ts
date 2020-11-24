@@ -26,13 +26,19 @@ export class PokedexService {
 
     getPokemon(pokemonId: number) {
         let pokemon = pokedex.default.pokemons[pokemonId];
+
+        if(typeof pokemon.preevolution !== 'undefined') {
             pokemon.preevolution.forEach((preId, index) => {
                 pokemon.preevolution[index] = pokedex.default.pokemons[preId-1];
-            })
+            });
+        }
 
+        if(typeof pokemon.evolution !== 'undefined') {
             pokemon.evolution.forEach((eId, index) => {
                 pokemon.evolution[index] = pokedex.default.pokemons[eId-1];
-            })
+            });
+        }
+
         return pokemon;
     }
 
