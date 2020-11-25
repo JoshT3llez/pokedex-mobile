@@ -131,7 +131,19 @@
                         </ion-grid>
                     </div>
                     <div *ngSwitchCase="'evolutions'">
-                        <ion-label>Evolutions</ion-label>
+                        <ion-grid>
+                            <ion-row *ngFor="let preEvolution of pokemon.preevolution">
+                                <ion-col>
+                                    <ion-label>{{preEvolution.name}}</ion-label>
+                                </ion-col>
+                            </ion-row>
+
+                            <ion-row *ngFor="let evolution of pokemon.evolution">
+                                <ion-col>
+                                    <ion-label>{{evolution.name}}</ion-label>
+                                </ion-col>
+                            </ion-row>
+                        </ion-grid>
                     </div>
                 </div>
             </div>

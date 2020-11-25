@@ -17,7 +17,6 @@ export class DetailsPage {
         this.activatedRoute.params.subscribe(params => {
             const pokemonId = params.pokemonId - 1;
             this.pokemon    = this.pokedexService.getPokemon(pokemonId);
-            console.log(this.pokemon);
         });
     }
 
