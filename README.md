@@ -1,4 +1,4 @@
-# This Project based on Habib Dev. UI Challenges Project.
+# This Project based on Habib Dev. UI Challenges Project and Daniel Motta Design 
 # Pokemon PokeDex Mobile App UI User Interface Modern Design Project with ionic 5 and Angular Framework V10.
 
 ## Developed Using:
@@ -8,6 +8,10 @@
 
 ## Screenshots
 ![ionic-pokedex](https://user-images.githubusercontent.com/31030616/88213261-85676680-cc69-11ea-94df-8d715d24372f.png)
+![pokemon-details](https://user-images.githubusercontent.com/22060566/100350058-b3660a00-2fbf-11eb-9d58-22c79562c4cc.png)
+<p align="left">
+    <a href="https://dribbble.com/DanielMots">DanielMots Dribble Profile</a>
+</p>
 
 ## Prerequisite:
 1. Node.js to be installed.
