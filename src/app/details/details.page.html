@@ -34,9 +34,9 @@
                         <ion-label>Stats</ion-label>
                     </ion-segment-button>
 
-                    <ion-segment-button value="evolutions">
+                    <!-- <ion-segment-button value="evolutions">
                         <ion-label>Evolutions</ion-label>
-                    </ion-segment-button>
+                    </ion-segment-button> -->
                 </ion-segment>
 
                 <div [ngSwitch]="segment" class="ion-margin-top">
@@ -130,7 +130,7 @@
                             </ion-row>
                         </ion-grid>
                     </div>
-                    <div *ngSwitchCase="'evolutions'">
+                    <!-- <div *ngSwitchCase="'evolutions'">
                         <ion-grid>
                             <ion-row *ngFor="let preEvolution of pokemon.preevolution">
                                 <ion-col>
@@ -144,7 +144,7 @@
                                 </ion-col>
                             </ion-row>
                         </ion-grid>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
